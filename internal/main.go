@@ -32,8 +32,6 @@ func main() {
 	_ = os.RemoveAll("mdi")
 	_ = os.MkdirAll("mdi", os.ModePerm)
 
-	metaList = metaList[:1]
-
 	// create mdi/types.go
 	var typesContent bytes.Buffer
 	if err = typesTempl.Execute(&typesContent, map[string]any{
@@ -54,7 +52,6 @@ func main() {
 		panic(err)
 	}
 
-	fmt.Println(string(funcsContent.Bytes()))
 	if err = saveToFile("mdi/funcs.go", funcsContent.Bytes()); err != nil {
 		panic(err)
 	}
