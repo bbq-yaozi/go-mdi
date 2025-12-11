@@ -8,5 +8,5 @@ var {{.meta.Name | PascalCase}} = Icon {
 	author:     "{{.meta.Author}}",
 	version:    "{{.meta.Version}}",
 	deprecated: {{.meta.Deprecated}},
-	data:       []byte{{"{"}}{{.meta.Data | BytesToString}}{{"}"}},
+	content:    []byte{{"{"}}{{.meta.Data | BytesToString}}{{"}"}},
 }

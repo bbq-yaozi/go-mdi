@@ -12,7 +12,7 @@ type Icon struct {
 	author     string
 	version    string
 	deprecated bool
-	data       []byte
+	content       []byte
 }
 
 func (i Icon) ID() string {
@@ -45,8 +45,8 @@ func (i Icon) Deprecated() bool {
 	return i.deprecated
 }
 
-func (i Icon) Data() []byte {
-	cp := make([]byte, len(i.data))
-	copy(cp, i.data)
+func (i Icon) Content() []byte {
+	cp := make([]byte, len(i.content))
+	copy(cp, i.content)
 	return cp
 }
